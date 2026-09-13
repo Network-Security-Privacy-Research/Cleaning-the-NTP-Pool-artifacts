@@ -1,0 +1,2 @@
+# cluster_backscans.py uses only the Python standard library.
+# External tool dependency: tshark (Wireshark CLI) must be on $PATH.
