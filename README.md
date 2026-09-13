@@ -3,6 +3,9 @@
 Research artifacts for the CCS 2026 paper *"Cleaning the NTP Pool: Detecting and
 Mitigating NTP-Sourced IPv6 Scanning."*
 
+**Paper:** [arXiv:2607.21903](https://arxiv.org/pdf/2607.21903) &nbsp;·&nbsp;
+[doi:10.1145/3830454.3846563](https://doi.org/10.1145/3830454.3846563)
+
 This repository contains the two artifacts enumerated in the paper's Open
 Science appendix:
 
@@ -94,6 +97,19 @@ destination address be decoded directly rather than looked up in a database.
 The prober released here implements the scheme actually used to collect the
 paper's data: a fresh random source address per (server, hop limit) pair, with
 the mapping recorded in the JSONL output. `clustering/` consumes that JSONL.
+
+## Citation
+
+```bibtex
+@inproceedings{rye2026cleaning,
+  author    = {Rye, Erik and Beverly, Robert},
+  title     = {{Cleaning the NTP Pool: Detecting and Mitigating NTP-Sourced IPv6 Scanning}},
+  booktitle = {Proceedings of the 2026 ACM SIGSAC Conference on Computer and
+               Communications Security (CCS '26)},
+  year      = {2026},
+  location  = {The Hague, Netherlands},
+}
+```
 
 ## License
 
