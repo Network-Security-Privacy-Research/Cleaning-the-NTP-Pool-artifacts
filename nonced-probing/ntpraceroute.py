@@ -20,6 +20,7 @@ def checkArgs(n):
 
     except Exception as e:
         logging.fatal(f"Error parsing {n} as an IPv6 network: {e}")
+        raise SystemExit(1)
 
 
 def getRandomSourceAddress(network):
@@ -54,7 +55,8 @@ def queryServer(serverAddr, net, prefix, minTTL, maxTTL, timeout):
     }
     with open(f"{prefix}-ntp-traceroute-{int(time.time())}.jsonl",
               "a") as f:
-        for ttl in range(minTTL, maxTTL):
+        # maxTTL is inclusive, as documented for --maxTTL (default 32)
+        for ttl in range(minTTL, maxTTL + 1):
             # Get new src IP and src port for this dest/TTL combo
             src = getRandomSourceAddress(net)
             randPort = int(RandShort())
